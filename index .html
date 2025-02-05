@@ -4,76 +4,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire de Soumission</title>
-<link rel="stylesheet" href="https://denisngeu.github.io/formulaire/style.css">
-<script src="https://denisngeu.github.io/formulaire/script.js"></script>
+    <style>
+        /* Style global amélioré */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 900px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .required::after {
+            content: " *";
+            color: red;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+
+            input, textarea, button {
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Formulaire de Publications</h1>
-    <form id="submissionForm">
-        <div class="form-group">
-            <label for="articleTitle" class="required">Titre de l'article :</label>
-            <input type="text" id="articleTitle" name="articleTitle" placeholder="Entrez le titre de l'article" required>
-        </div>
+    <div class="container">
+        <h1>Formulaire de Publications</h1>
+        <form id="submissionForm">
+            <div class="form-group">
+                <label for="articleTitle" class="required">Titre de l'article :</label>
+                <input type="text" id="articleTitle" name="articleTitle" placeholder="Entrez le titre de l'article" required>
+            </div>
 
-        <div class="form-group">
-            <label for="namesAffiliations" class="required">Noms et Affiliations :</label>
-            <input type="text" id="namesAffiliations" name="namesAffiliations" placeholder="Entrez les noms et affiliations" required>
-        </div>
+            <div class="form-group">
+                <label for="namesAffiliations" class="required">Noms et Affiliations :</label>
+                <input type="text" id="namesAffiliations" name="namesAffiliations" placeholder="Entrez les noms et affiliations" required>
+            </div>
 
-        <div class="form-group">
-            <label for="abstract" class="required">Résumé :</label>
-            <textarea id="abstract" name="abstract" placeholder="Entrez un résumé de l'article" rows="4" required></textarea>
-        </div>
+            <div class="form-group">
+                <label for="abstract" class="required">Résumé :</label>
+                <textarea id="abstract" name="abstract" placeholder="Entrez un résumé de l'article" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label for="startDate" class="required">Date de début de la conférence :</label>
-            <input type="date" id="startDate" name="startDate" required>
-        </div>
+            <div class="form-group">
+                <label for="startDate" class="required">Date de début de la conférence :</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
 
-        <div class="form-group">
-            <label for="endDate" class="required">Date de fin de la conférence :</label>
-            <input type="date" id="endDate" name="endDate" required>
-        </div>
+            <div class="form-group">
+                <label for="endDate" class="required">Date de fin de la conférence :</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
 
-        <div class="form-group">
-            <label for="presentationDate" class="required">Date de présentation :</label>
-            <input type="date" id="presentationDate" name="presentationDate" required>
-        </div>
+            <div class="form-group">
+                <label for="presentationDate" class="required">Date de présentation :</label>
+                <input type="date" id="presentationDate" name="presentationDate" required>
+            </div>
 
-        <div class="form-group">
-            <label for="volumeIssuePages" class="required">Volume, Issue, Pages :</label>
-            <input type="text" id="volumeIssuePages" name="volumeIssuePages" placeholder="Volume, Issue, Pages" required>
-        </div>
+            <div class="form-group">
+                <label for="volumeIssuePages" class="required">Volume, Issue, Pages :</label>
+                <input type="text" id="volumeIssuePages" name="volumeIssuePages" placeholder="Volume, Issue, Pages" required>
+            </div>
 
-        <div class="form-group">
-            <label for="doi" class="required">DOI :</label>
-            <input type="text" id="doi" name="doi" placeholder="DOI" required>
-        </div>
+            <div class="form-group">
+                <label for="doi" class="required">DOI :</label>
+                <input type="text" id="doi" name="doi" placeholder="DOI" required>
+            </div>
 
-        <div class="form-group">
-            <label for="publisher" class="required">Publisher (Éditeur) :</label>
-            <input type="text" id="publisher" name="publisher" placeholder="Publisher" required>
-        </div>
+            <div class="form-group">
+                <label for="publisher" class="required">Publisher (Éditeur) :</label>
+                <input type="text" id="publisher" name="publisher" placeholder="Publisher" required>
+            </div>
 
-        <div class="form-group">
-            <label for="collection" class="required">Collection :</label>
-            <input type="text" id="collection" name="collection" placeholder="Collection" required>
-        </div>
+            <div class="form-group">
+                <label for="collection" class="required">Collection :</label>
+                <input type="text" id="collection" name="collection" placeholder="Collection" required>
+            </div>
 
-        <div class="form-group">
-            <label for="country" class="required">Pays :</label>
-            <input type="text" id="country" name="country" placeholder="Pays" required>
-        </div>
+            <div class="form-group">
+                <label for="country" class="required">Pays :</label>
+                <input type="text" id="country" name="country" placeholder="Pays" required>
+            </div>
 
-        <div class="form-group">
-            <label for="document">Pièces Jointes (facultatif) :</label>
-            <input type="file" id="document" name="document" multiple>
-        </div>
+            <div class="form-group">
+                <label for="document">Pièces Jointes (facultatif) :</label>
+                <input type="file" id="document" name="document" multiple>
+            </div>
 
-        <div class="form-group">
-            <button type="submit">Soumettre</button>
-        </div>
-    </form>
+            <div class="form-group">
+                <button type="submit">Soumettre</button>
+            </div>
+        </form>
+    </div>
 
+    <script>
+        document.getElementById("submissionForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const articleTitle = document.getElementById("articleTitle").value.trim();
+            const namesAffiliations = document.getElementById("namesAffiliations").value.trim();
+            const abstract = document.getElementById("abstract").value.trim();
+            const conferenceStartDate = new Date(document.getElementById("startDate").value);
+            const conferenceEndDate = new Date(document.getElementById("endDate").value);
+            const presentationDate = new Date(document.getElementById("presentationDate").value);
+            const volumeIssuePages = document.getElementById("volumeIssuePages").value.trim();
+            const doi = document.getElementById("doi").value.trim();
+            const publisher = document.getElementById("publisher").value.trim();
+            const collection = document.getElementById("collection").value.trim();
+            const country = document.getElementById("country").value.trim();
+
+            if (!articleTitle || !namesAffiliations || !abstract) {
+                alert("Veuillez remplir tous les champs obligatoires.");
+                return;
+            }
+
+            if (isNaN(conferenceStartDate) || isNaN(conferenceEndDate) || isNaN(presentationDate)) {
+                alert("Veuillez entrer des dates valides.");
+                return;
+            }
+            if (conferenceStartDate > conferenceEndDate) {
+                alert("La date de début doit être antérieure à la date de fin.");
+                return;
+            }
+            if (presentationDate < conferenceStartDate || presentationDate > conferenceEndDate) {
+                alert("La date de présentation doit être comprise entre la date de début et la date de fin.");
+                return;
+            }
+
+            const mailtoLink = `mailto:ericdenisnguema10@gmail.com?subject=Soumission : ${encodeURIComponent(articleTitle)}&body=${encodeURIComponent(
+                `Bonjour,\n\nVoici les informations de la soumission :\n\n` +
+                `Titre : ${articleTitle}\nNoms : ${namesAffiliations}\nRésumé : ${abstract}\nDate : ${presentationDate.toLocaleDateString()}\n\nCordialement.`
+            )}`;
+
+            if (mailtoLink.length > 2000) {
+                alert("Le contenu du mail est trop long.");
+                return;
+            }
+
+            window.location.href = mailtoLink;
+            alert("Votre soumission est prête.");
+        });
+    </script>
 </body>
 </html>
