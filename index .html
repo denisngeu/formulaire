@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Soumission</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formulaire de Publications</h1>
+    <form id="submissionForm">
+        <div class="form-group">
+            <label for="articleTitle" class="required">Titre de l'article :</label>
+            <input type="text" id="articleTitle" name="articleTitle" placeholder="Entrez le titre de l'article" required>
+        </div>
+
+        <div class="form-group">
+            <label for="namesAffiliations" class="required">Noms et Affiliations :</label>
+            <input type="text" id="namesAffiliations" name="namesAffiliations" placeholder="Entrez les noms et affiliations" required>
+        </div>
+
+        <div class="form-group">
+            <label for="abstract" class="required">Résumé :</label>
+            <textarea id="abstract" name="abstract" placeholder="Entrez un résumé de l'article" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="startDate" class="required">Date de début de la conférence :</label>
+            <input type="date" id="startDate" name="startDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="endDate" class="required">Date de fin de la conférence :</label>
+            <input type="date" id="endDate" name="endDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="presentationDate" class="required">Date de présentation :</label>
+            <input type="date" id="presentationDate" name="presentationDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="volumeIssuePages" class="required">Volume, Issue, Pages :</label>
+            <input type="text" id="volumeIssuePages" name="volumeIssuePages" placeholder="Volume, Issue, Pages" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doi" class="required">DOI :</label>
+            <input type="text" id="doi" name="doi" placeholder="DOI" required>
+        </div>
+
+        <div class="form-group">
+            <label for="publisher" class="required">Publisher (Éditeur) :</label>
+            <input type="text" id="publisher" name="publisher" placeholder="Publisher" required>
+        </div>
+
+        <div class="form-group">
+            <label for="collection" class="required">Collection :</label>
+            <input type="text" id="collection" name="collection" placeholder="Collection" required>
+        </div>
+
+        <div class="form-group">
+            <label for="country" class="required">Pays :</label>
+            <input type="text" id="country" name="country" placeholder="Pays" required>
+        </div>
+
+        <div class="form-group">
+            <label for="document">Pièces Jointes (facultatif) :</label>
+            <input type="file" id="document" name="document" multiple>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Soumettre</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
